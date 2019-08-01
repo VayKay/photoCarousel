@@ -51,6 +51,7 @@
     "sequelize": "^5.9.3"
   },
   "devDependencies": {
+    "cassandra-driver": "^4.1.0",
     "fs": "0.0.1-security",
     "path": "^0.12.7",
     "pg": "^7.11.0"
