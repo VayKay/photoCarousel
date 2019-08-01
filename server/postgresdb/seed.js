@@ -1,5 +1,4 @@
 const faker = require('faker');
-const post = require('./index.js');
 const fs = require('fs');
 const path = require('path');
 
@@ -35,11 +34,11 @@ const generatePhotos = async () => {
     if (listing_id <= 9000000) {
       randomNumber = 5;
     } else if (listing_id > 9000000 && listing_id <= 9500000) {
-      randomNumber = (Math.floor(Math.random() * (10 - 5 + 1)) + 5);
-    } else if (listing_id > 9500000 && listing_id <= 9700000) {
-      randomNumber = (Math.floor(Math.random() * (20 - 10 + 1)) + 10);
-    } else if (listing_id > 9700000) {
-      randomNumber = (Math.floor(Math.random() * (29 - 20 + 1)) + 20);
+      randomNumber = (Math.floor(Math.random() * (8 - 5 + 1)) + 5);
+    } else if (listing_id > 9500000 && listing_id <= 9800000) {
+      randomNumber = (Math.floor(Math.random() * (13 - 8 + 1)) + 8);
+    } else if (listing_id > 9800000) {
+      randomNumber = (Math.floor(Math.random() * (15 - 13 + 1)) + 13);
     }
 
     for (let priority = 0; priority < randomNumber; priority++) {
