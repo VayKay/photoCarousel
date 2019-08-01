@@ -3,3 +3,4 @@ coverage
 unsplasherAPI.js
 server/cvsFiles
 server/pictures
+server/cassandradb/cassCsvFiles
