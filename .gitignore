@@ -3,8 +3,5 @@ coverage
 unsplasherAPI.js
 server/cvsFiles
 server/pictures
-<<<<<<< HEAD
 server/cassandradb/cassCsvFiles
-=======
-server/cassandradb
->>>>>>> 8053e820c71e48dca45dc0c6e5f48ffa8b20dc1b
+newrelic_agent.log
