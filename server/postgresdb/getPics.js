@@ -1,6 +1,7 @@
 const unsplash = require('../db/unsplashHelper.js');
 const fs = require('fs');
 const path = require('path');
+const axios = require('axios');
 
 const writeStream = (stream, data) => {
     if (!stream.write(data)) {
@@ -24,15 +25,15 @@ const generatePhotos = () => {
             const photoUrl = houseData.results[randomImage].urls.regular;
             const tinyPhotoUrl = houseData.results[randomImage].urls.thumb;
 
-            var ok1 = writeStream(largePicsWriteSteam, photoUrl);
-            if (!ok1) {
-                ok1
-            }
+            axios.get(photoUrl, {responseType: 'stream'})
+                .then((picture) => {
+                picture.data.pipe(largePicsWriteSteam);
+            })
 
-            var ok2 = writeStream(smallPicsWriteSteam, tinyPhotoUrl);
-            if (!ok2) {
-                ok2
-            }
+            axios.get(tinyPhotoUrl, {responseType: 'stream'})
+                .then((picture) => {
+                picture.data.pipe(smallPicsWriteSteam)
+            })
         
           listing_id += 1;
         }

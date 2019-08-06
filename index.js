@@ -54,38 +54,38 @@ app.get('/api/listings/photos/:listingID', (req, res) => {
 });
 
 
-// app.get('/api/listings/photos/initial/:listingID', (req, res) => {
-//   const { listingID } = req.params;
+app.get('/api/listings/photos/initial/:listingID', (req, res) => {
+  const { listingID } = req.params;
 
-//   db.Photo.findAll({
-//     where: {
-//       listing_id: listingID,
-//       priority: {
-//         [Op.lte]: 4,
-//       },
-//     },
-//     order: [
-//       ['priority', 'ASC'],
-//     ],
-//   }).then(result => res.send(result))
-//     .catch(err => res.send(err));
-// });
+  db.Photo.findAll({
+    where: {
+      listing_id: listingID,
+      priority: {
+        [Op.lte]: 4,
+      },
+    },
+    order: [
+      ['priority', 'ASC'],
+    ],
+  }).then(result => res.send(result))
+    .catch(err => res.send(err));
+});
 
-// app.get('/api/listings/photos/:listingID', (req, res) => {
-//   const { listingID } = req.params;
+app.get('/api/listings/photos/:listingID', (req, res) => {
+  const { listingID } = req.params;
 
-//   db.Photo.findAll({
-//     where: {
-//       listing_id: listingID,
-//       priority: {
-//         [Op.gte]: 5,
-//       },
-//     },
-//     order: [
-//       ['priority', 'ASC'],
-//     ],
-//   }).then(result => res.send(result))
-//     .catch(err => res.send(err));
-// });
+  db.Photo.findAll({
+    where: {
+      listing_id: listingID,
+      priority: {
+        [Op.gte]: 5,
+      },
+    },
+    order: [
+      ['priority', 'ASC'],
+    ],
+  }).then(result => res.send(result))
+    .catch(err => res.send(err));
+});
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));

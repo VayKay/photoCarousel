@@ -5,3 +5,4 @@ server/cvsFiles
 server/pictures
 server/cassandradb/cassCsvFiles
 newrelic_agent.log
+newrelicAPI.js
