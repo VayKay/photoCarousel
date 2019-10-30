@@ -49,7 +49,7 @@
     "mysql2": "^1.6.5",
     "newrelic": "^5.11.0",
     "nodemon": "^1.19.1",
-    "sequelize": "^5.9.3"
+    "sequelize": "^5.15.1"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
